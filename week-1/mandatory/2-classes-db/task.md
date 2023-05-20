@@ -14,13 +14,17 @@ To submit this homework write the correct commands for each question here:
 When you have finished all of the questions - open a pull request with your answers to the `Databases-Homework` repository.
 
 ## Homework
-
+psql -d cyf_hotel -f answers.sql 
 If you haven't completed all the exercises from this lesson then do that first.
 
 ### Tasks
 1.  Which rooms have a rate of more than 100.00?
+select rate from rooms where rate>100;
 2.  List the reservations that have a checkin date this month and are for more than three nights.
+select * from reservations where checkin_date > '2018-04-30' and ( checkout_date - checkin_date > 3);
+
 3.  List all customers from cities that begin with the letter 'M'.
+select name, city from customers where city like 'M%';
 
 Insert some new data into the room_types and rooms tables, querying after each stage to check the data, as follows:
 
